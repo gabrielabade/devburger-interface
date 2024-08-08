@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-
 import { Login } from './containers/Login/index.jsx';
 import GlobalStyles from './styles/globalStyles.js';
 

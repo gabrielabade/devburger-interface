@@ -7,7 +7,6 @@ import {
   Form,
   InputContainer,
   LeftContainer,
-  Link,
   RightContainer,
   Title,
 } from './styles';
@@ -20,8 +19,9 @@ export function Login() {
       </LeftContainer>
       <RightContainer>
         <Title>
-          Olá, seja bem vindo ao <span>Dev Burguer!</span> Acesse com seu
-          <span>Login e senha.</span>
+          Olá, seja bem vindo ao <span>Dev Burguer!</span>
+          <br />
+          Acesse com seu <span>Login e senha.</span>
         </Title>
 
         <Form>
@@ -35,7 +35,9 @@ export function Login() {
           </InputContainer>
           <Button>Entrar</Button>
         </Form>
-        <Link>Não possui conta? Clique aqui.</Link>
+        <p>
+          Não possui conta? <a>Clique aqui.</a>
+        </p>
       </RightContainer>
     </Container>
   );

@@ -33,7 +33,6 @@ export function Login() {
             <label>Senha</label>
             <input type="password" />
           </InputContainer>
-          <Link>Esqueci minha senha.</Link>
           <Button>Entrar</Button>
         </Form>
         <Link>Não possui conta? Clique aqui.</Link>

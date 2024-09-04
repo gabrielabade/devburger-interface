@@ -48,7 +48,7 @@ export function Login() {
     const {
       data: { token },
     } = await toast.promise(
-      api.post('/session', {
+      api.post('/sessions', {
         email: data.email,
         password: data.password,
       }),

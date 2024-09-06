@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import Carousel from 'react-multi-carousel';
 
 import { api } from '../../services/api';
 
@@ -14,9 +15,31 @@ export function CategoriesCarousel() {
     loadCategories();
   }, []);
 
+  const responsive = {
+    superLargeDesktop: {
+      breackpoint: { max: 4000, min: 3000 },
+      items: 4,
+    },
+    Desktop: {
+      breackpoint: { max: 3000, min: 1280 },
+      items: 4,
+    },
+    tablet: {
+      breackpoint: { max: 1280, min: 690 },
+      items: 3,
+    },
+    mobile: {
+      breackpoint: { max: 690, min: 0 },
+      items: 2,
+    },
+  };
+
   return (
-    <div>
-      <h1>Olá</h1>
-    </div>
+    <Container>
+      <Title>Categorias</Title>
+      <Carousel>
+        <ContainerItems></ContainerItems>
+      </Carousel>
+    </Container>
   );
 }

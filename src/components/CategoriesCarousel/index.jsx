@@ -19,19 +19,19 @@ export function CategoriesCarousel() {
 
   const responsive = {
     superLargeDesktop: {
-      breackpoint: { max: 4000, min: 3000 },
+      breakpoint: { max: 4000, min: 3000 },
       items: 4,
     },
     Desktop: {
-      breackpoint: { max: 3000, min: 1280 },
+      breakpoint: { max: 3000, min: 1280 },
       items: 4,
     },
     tablet: {
-      breackpoint: { max: 1280, min: 690 },
+      breakpoint: { max: 1280, min: 690 },
       items: 3,
     },
     mobile: {
-      breackpoint: { max: 690, min: 0 },
+      breakpoint: { max: 690, min: 0 },
       items: 2,
     },
   };
@@ -47,7 +47,7 @@ export function CategoriesCarousel() {
       >
         {categories.map((category) => (
           <ContainerItems key={category.id} imageUrl={category.url}>
-            {category.name}
+            <p>{category.name}</p>
           </ContainerItems>
         ))}
       </Carousel>

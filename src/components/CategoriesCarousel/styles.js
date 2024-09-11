@@ -25,7 +25,7 @@ export const Title = styled.h2`
     width: 56px;
     height: 4px;
     background-color: #9758a6;
-    left: calc(50%-28px);
+    left: calc(50% - 28px);
   }
 `;
 
@@ -48,5 +48,6 @@ export const ContainerItems = styled.div`
     padding: 10px 30px;
     font-size: 22.5px;
     font-weight: bold;
+    border-radius: 20px;
   }
 `;

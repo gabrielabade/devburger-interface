@@ -1,10 +1,16 @@
 import styled from 'styled-components';
 
+import Background from '../../assets/background.svg';
+
 export const Container = styled.div`
   .carousel-item {
     padding-right: 40px;
   }
-
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url('${Background}');
   padding-left: 40px;
 `;
 

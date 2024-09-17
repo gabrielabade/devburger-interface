@@ -6,11 +6,13 @@ export const Container = styled.div`
   }
 
   overflow-x: hidden;
+
   .react-multi-carousel-list {
     overflow: visible;
   }
 
   padding-left: 40px;
+  padding-bottom: 40px;
 `;
 
 export const Title = styled.h2`

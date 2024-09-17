@@ -28,7 +28,3 @@ export const Container = styled.section`
   height: 100vh;
   width: 100%;
 `;
-
-export const Content = styled.div`
-  padding-bottom: 70px;
-`;

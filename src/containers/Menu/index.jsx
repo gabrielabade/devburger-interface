@@ -3,7 +3,13 @@ import { useEffect, useState } from 'react';
 import { CardProduct } from '../../components/CardProduct ';
 import { api } from '../../services/api';
 import { formatPrice } from '../../utils/formatPrice';
-import { Container, Banner, CategoryMenu, ProductsContainer } from './styles';
+import {
+  Container,
+  Banner,
+  CategoryMenu,
+  ProductsContainer,
+  CategoryButton,
+} from './styles';
 
 export function Menu() {
   const [categories, setCategories] = useState([]);
@@ -45,7 +51,11 @@ export function Menu() {
           <span>Esse cardápio está irresistível</span>
         </h1>
       </Banner>
-      <CategoryMenu></CategoryMenu>
+      <CategoryMenu>
+        {categories.map((category) => (
+          <CategoryButton key={category.id}>{category.name}</CategoryButton>
+        ))}
+      </CategoryMenu>
 
       <ProductsContainer>
         {products.map((product) => (

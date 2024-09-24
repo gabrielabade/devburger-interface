@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import styled from 'styled-components';
 
 import Background from '../../assets/background.svg';
@@ -46,7 +48,24 @@ export const Banner = styled.div`
   }
 `;
 
-export const CategoryMenu = styled.div``;
+export const CategoryMenu = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 50px;
+`;
+
+export const CategoryButton = styled(Link)`
+  text-decoration: none;
+  cursor: pointer;
+  background: none;
+  color: #9758a6;
+  font-size: 24px;
+  font-weight: 500;
+  padding-bottom: 5px;
+  line-height: 20px;
+  border-bottom: 3px solid #9758a6;
+`;
 
 export const ProductsContainer = styled.div`
   display: grid;

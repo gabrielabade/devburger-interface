@@ -1,11 +1,18 @@
 import styled from 'styled-components';
 
+import Background from '../../assets/background.svg';
 import BannerHamburger from '../../assets/banner-hamburger.svg';
 
 export const Container = styled.div`
   width: 100%;
   min-height: 100vh;
   background-color: #f0f0f0;
+
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url('${Background}');
 `;
 
 export const Banner = styled.div`
@@ -41,4 +48,12 @@ export const Banner = styled.div`
 
 export const CategoryMenu = styled.div``;
 
-export const ProductsContainer = styled.div``;
+export const ProductsContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 40px;
+  gap: 60px;
+  justify-content: center;
+  max-width: 1280px;
+  margin: 50px auto;
+`;

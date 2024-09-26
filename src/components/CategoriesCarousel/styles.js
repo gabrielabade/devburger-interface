@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -41,13 +43,18 @@ export const ContainerItems = styled.div`
   padding: 20px 10px;
   width: 100%;
   height: 200px;
+`;
 
-  p {
-    color: white;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 10px 30px;
-    font-size: 22.5px;
-    font-weight: bold;
-    border-radius: 20px;
+export const CategoryButton = styled(Link)`
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 30px;
+  font-size: 22.5px;
+  border-radius: 20px;
+  font-weight: 500;
+  text-decoration: none;
+
+  &:hover {
+    background-color: #9758a6;
   }
 `;

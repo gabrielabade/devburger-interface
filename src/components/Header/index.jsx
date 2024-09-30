@@ -1,4 +1,4 @@
-import { UserCircle, ShoppingCard } from 'phosphor-icons/react ';
+import { UserCircle, ShoppingCart } from '@phosphor-icons/react';
 
 import {
   Container,
@@ -33,7 +33,7 @@ export function Header() {
               </div>
             </Profile>
             <LinkContainer>
-              <ShoppingCard color="#fff" size={24} />
+              <ShoppingCart color="#fff" size={24} />
               <HeaderLink>Carrinho</HeaderLink>
             </LinkContainer>
           </Options>

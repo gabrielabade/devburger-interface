@@ -2,6 +2,7 @@ import { useNavigate, useResolvedPath } from 'react-router-dom';
 
 import { UserCircle, ShoppingCart } from '@phosphor-icons/react';
 
+import { useUser } from '../../hooks/UserContext';
 import {
   Container,
   HeaderLink,
@@ -15,7 +16,13 @@ import {
 
 export function Header() {
   const navigate = useNavigate();
+  const { logout, userInfo } = useUser();
   const { pathname } = useResolvedPath();
+
+  function logoutUser() {
+    logout();
+    navigate('/login');
+  }
 
   return (
     <div>
@@ -37,14 +44,14 @@ export function Header() {
               <UserCircle color="#fff" size={24} />
               <div>
                 <p>
-                  Olá, <span>Birubs</span>
+                  Olá, <span>{userInfo.name}</span>
                 </p>
-                <Logout>Sair</Logout>
+                <Logout onClick={logoutUser}>Sair</Logout>
               </div>
             </Profile>
             <LinkContainer>
               <ShoppingCart color="#fff" size={24} />
-              <HeaderLink>Carrinho</HeaderLink>
+              <HeaderLink to="/carrinho">Carrinho</HeaderLink>
             </LinkContainer>
           </Options>
         </Content>

@@ -1,3 +1,5 @@
+import { useNavigate, useResolvedPath } from 'react-router-dom';
+
 import { UserCircle, ShoppingCart } from '@phosphor-icons/react';
 
 import {
@@ -12,14 +14,22 @@ import {
 } from './styles';
 
 export function Header() {
+  const navigate = useNavigate();
+  const { pathname } = useResolvedPath();
+
   return (
     <div>
       <Container>
         <Content>
           <Navigation>
             <div>
-              <HeaderLink>Home</HeaderLink>
-              <HeaderLink>Cardápio</HeaderLink>
+              <HeaderLink to="/" $isActive={pathname === '/'}>
+                Home
+              </HeaderLink>
+              <hr></hr>
+              <HeaderLink to="/cardapio" $isActive={pathname === '/cardapio'}>
+                Cardápio
+              </HeaderLink>
             </div>
           </Navigation>
           <Options>

@@ -18,7 +18,9 @@ export const Banner = styled.div`
   background-color: #1f1f1f;
   background-size: cover;
   background-position: center;
+  display: flex;
   justify-content: center;
+  align-items: center;
   position: relative;
 
   height: 180px;

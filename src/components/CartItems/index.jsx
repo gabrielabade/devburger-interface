@@ -1,5 +1,7 @@
 import { useCart } from '../../hooks/CartContext';
+import { formatPrice } from '../../utils/formatPrice';
 import { Table } from '../index';
+import { ButtonGroup, EmptyCart, ProductImage, ProductTotalPrice } from './styles';
 
 export function CartItems() {
   const { cartProducts, increaseProduct, decreaseProduct } = useCart();
@@ -19,16 +21,26 @@ export function CartItems() {
           cartProducts.map((product) => (
             <Table.Tr key={product.id}>
               <Table.Td>
-                <img src={product.url} />
+                <ProductImage src={product.url} />
               </Table.Td>
               <Table.Td>{product.name}</Table.Td>
               <Table.Td>{product.currencyValue}</Table.Td>
-              <Table.Td>{product.quantity}</Table.Td>
-              <Table.Td>{product.quantity}</Table.Td>
+              <Table.Td>
+                <ButtonGroup>
+                  <button onClick={() => decreaseProduct(product.id)}>-</button>
+                  {product.quantity}
+                  <button onClick={() => increaseProduct(product.id)}>+</button>
+                </ButtonGroup>
+              </Table.Td>
+              <Table.Td>
+                <ProductTotalPrice>
+                  {formatPrice(product.quantity * product.price)}
+                </ProductTotalPrice>
+              </Table.Td>
             </Table.Tr>
           ))
         ) : (
-          <div>carrinho vazio</div>
+          <EmptyCart>carrinho vazio</EmptyCart>
         )}
       </Table.Body>
     </Table.Root>

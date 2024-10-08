@@ -1,10 +1,18 @@
+import TrashIcon from '../../assets/trash.svg';
 import { useCart } from '../../hooks/CartContext';
 import { formatPrice } from '../../utils/formatPrice';
 import { Table } from '../index';
-import { ButtonGroup, EmptyCart, ProductImage, ProductTotalPrice } from './styles';
+import {
+  ButtonGroup,
+  EmptyCart,
+  ProductImage,
+  ProductTotalPrice,
+  TrashImage,
+} from './styles';
 
 export function CartItems() {
-  const { cartProducts, increaseProduct, decreaseProduct } = useCart();
+  const { cartProducts, increaseProduct, decreaseProduct, deleteProduct } =
+    useCart();
   return (
     <Table.Root>
       <Table.Header>
@@ -14,6 +22,7 @@ export function CartItems() {
           <Table.Th>Preço</Table.Th>
           <Table.Th>Quantidade</Table.Th>
           <Table.Th>Total</Table.Th>
+          <Table.Th></Table.Th>
         </Table.Tr>
       </Table.Header>
       <Table.Body>
@@ -36,6 +45,13 @@ export function CartItems() {
                 <ProductTotalPrice>
                   {formatPrice(product.quantity * product.price)}
                 </ProductTotalPrice>
+              </Table.Td>
+              <Table.Td>
+                <TrashImage
+                  src={TrashIcon}
+                  alt="lixeira"
+                  onClick={() => deleteProduct(product.id)}
+                ></TrashImage>
               </Table.Td>
             </Table.Tr>
           ))

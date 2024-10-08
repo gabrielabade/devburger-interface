@@ -38,3 +38,9 @@ export const EmptyCart = styled.p`
 export const ProductTotalPrice = styled.p`
   font-weight: bold;
 `;
+
+export const TrashImage = styled.img`
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+`;

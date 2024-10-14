@@ -68,8 +68,8 @@ export default function CheckoutForm() {
             navigate(
               `/complete?payment_intent_client_secret=${paymentIntent.client_secret}`,
             );
-            clearCart();
           }, 3000);
+
           clearCart();
           toast.success('✅ Pedido realizado com sucesso!');
         } else if (status === 409) {
@@ -81,7 +81,9 @@ export default function CheckoutForm() {
         toast.error('😭 Falha no sistema! Tente novamente.');
       }
     } else {
-      toast.error('😭 Falha no sistema! Tente novamente.');
+      navigate(
+        `/complete?payment_intent_client_secret=${paymentIntent.client_secret}`,
+      );
     }
 
     setIsLoading(false);

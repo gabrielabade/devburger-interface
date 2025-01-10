@@ -29,11 +29,13 @@ Este é o repositório do **Frontend** do projeto **DevBurger**, desenvolvido ut
 - React.js  
 - Vite  
 - Styled-Components  
+- Docker
+- Docker Compose
 
 ---
 
 ## Configuração do Ambiente
-
+### Método 1: Instalação Local
 1. Clone o repositório:  
    ```bash
    git clone https://github.com/gabrielabade/devburger-interface
@@ -50,7 +52,15 @@ Este é o repositório do **Frontend** do projeto **DevBurger**, desenvolvido ut
    ```bash
    yarn dev
    ```  
-
+### Método 2: Usando Docker
+1. Certifique-se de ter o Docker e Docker Compose instalados em sua máquina.
+2. Clone o repositório:
+   ```bash
+   git clone https://github.com/gabrielabade/devburger-interface
+3. Na raiz do projeto, execute:
+   ```bash
+   docker-compose up --build
+#### O projeto estará disponível em http://localhost:5173
 ---
 
 ## Navegação para o Backend
